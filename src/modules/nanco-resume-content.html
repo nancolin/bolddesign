@@ -1,0 +1,67 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="nanco-resume-content">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      .underline {
+        text-decoration: underline;
+      }
+    </style>
+    <h3>Opleiding</h3>
+
+    <p>2005 &ndash; 2009<br>
+    Stedelijk Dalton College, Vmbo-Kb, Zutphen.<br>
+    Richting Grafie media, Engels, Nederlands, wiskunde.<br>
+    Diploma behaalt</p>
+
+    <p>2009 &ndash; 2014<br>
+    Deltion College, grafisch vormgever, Mbo niveau 4, Zwolle.<br>
+    Diploma behaalt.</p>
+
+    <p>2015 &ndash; 2018<br>
+    Saxion, Kunst en Techniek, Hbo, Enschede.<br>
+    Diploma te behalen.</p>
+
+    <h3>Werk</h3>
+
+    <p>Zomer vakantie 2008<br>
+    Afwassen Hanze-stadsbrouwerij Zutphen</p>
+
+    <p>2008 &ndash; 2009<br>
+    Vakkenvuller Supermarkt Jumbo Zutphen</p>
+
+    <p class="underline">Stage</p>
+
+    <p>2008<br>
+    Smurfit Kappa, Deventer.<br>
+    Snuffelstage bij de D.T.P. drukkerij en nabewerking.</p>
+
+    <p>2009<br>
+    Drukkerij Weevers, Vorden<br>
+    Snuffelstage bij de dtp drukkerij en nabewerking.</p>
+
+    <p>2011<br>
+    Eijerkamp, Zutphen<br>
+    Ontwerper, D.T.P.</p>
+
+    <p>2013<br>
+    Trace, Apeldoorn<br>
+    Ontwerper, D.T.P</p>
+
+    <p>2016<br>
+    Tweakers, Amsterdam<br>
+    Ontwerper, D.T.P.</p>
+  </template>
+
+  <script>
+    class NancoResumeContent extends Polymer.Element {
+      static get is() { return 'nanco-resume-content'; }
+    }
+
+    window.customElements.define(NancoResumeContent.is, NancoResumeContent);
+  </script>
+</dom-module>
