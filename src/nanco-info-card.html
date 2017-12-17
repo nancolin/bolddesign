@@ -1,0 +1,107 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="nanco-info-card">
+  <template>
+    <style>
+      :host {
+        display: flex;
+      }
+
+      img {
+        display: block;
+      }
+
+      .image,
+      .info-block {
+        background-color: #2f3334;
+      }
+
+      .image {
+        padding: 8px;
+        flex-basis: 200px;
+      }
+
+      .info-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 1;
+      }
+
+      .info-block {
+        flex: 1;
+        padding: 16px;
+      }
+
+      .info-item span {
+        display: inline-block;
+      }
+
+      .info-item span:nth-child(1) {
+        width: 150px;
+      }
+
+      .info-item span:nth-child(2) {
+        font-weight: 900;
+        letter-spacing: 1px;
+      }
+    </style>
+
+    <div class="image">
+      <img src="[[image]]" alt="">
+    </div>
+
+    <div class="info-wrapper">
+      <div class="info-block">
+        <div class="info-item">
+          <span>Naam:</span>
+          <span>Nanco Shauwang Lin</span>
+        </div>
+        <div class="info-item">
+          <span>Mobiel:</span>
+          <span>06-34014318</span>
+        </div>
+        <div class="info-item">
+          <span>Email:</span>
+          <span>nancolin@hotmail.com</span>
+        </div>
+        <div class="info-item">
+          <span>Geboortedatum:</span>
+          <span>19-07-1992</span>
+        </div>
+        <div class="info-item">
+          <span>Nationaliteit:</span>
+          <span>Nederlandse</span>
+        </div>
+      </div>
+    </div>
+
+  </template>
+
+  <script>
+    class NancoInfoCard extends Polymer.Element {
+
+      static get is() { return 'nanco-info-card'; }
+
+      static get properties() {
+        return {
+          image: String,
+        };
+      }
+
+    }
+
+    window.customElements.define(NancoInfoCard.is, NancoInfoCard);
+  </script>
+</dom-module>

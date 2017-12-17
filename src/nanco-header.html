@@ -1,0 +1,96 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="nanco-header">
+  <template>
+    <style>
+      :host {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 48px;
+      }
+
+      a {
+        font-size: 20px;
+        font-weight: 600;
+        color: #333;
+        text-decoration: none;
+        border-bottom: solid 1px transparent;
+        transition: border-bottom-color 0.5s ease-out,
+                    color 0.5s ease-out;
+      }
+
+      a:hover {
+        border-bottom-color: #000;
+        color: #000;
+      }
+
+      .logo {
+        flex: 1 1 40%;
+        padding-right: 48px;
+      }
+
+      .logo [src*="logo"] {
+        display: block;
+        width: 180px;
+      }
+
+      .logo [src*="icon"] {
+        display: none;
+        width: 90px;
+      }
+
+      .menu {
+        flex: 1 1 60%;
+      }
+
+      .menu > span {
+        display: inline-block;
+        padding-right: 32px;
+      }
+
+      @media (max-width: 600px) {
+        .logo [src*="logo"] {
+          display: none;
+        }
+
+        .logo [src*="icon"] {
+          display: block;
+        }
+
+        .menu > span {
+          display: block;
+          padding: 2px;
+        }
+      }
+    </style>
+    <div class="logo">
+      <img src="images/logo.svg" alt="Bold Design">
+      <img src="images/icon.svg" alt="Bold Design">
+    </div>
+    <div class="menu">
+      <span><a href="[[rootPath]]">Home</a></span>
+      <span><a href="[[rootPath]]newview">Gallery</a></span>
+      <span><a href="[[rootPath]]newview">Contact</a></span>
+    </div>
+  </template>
+
+  <script>
+    class NancoHeader extends Polymer.Element {
+      static get is() { return 'nanco-header'; }
+    }
+
+    window.customElements.define(NancoHeader.is, NancoHeader);
+  </script>
+</dom-module>
