@@ -1,0 +1,93 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/sl-gallery/sl-gallery.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="nanco-view-gallery">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+      sl-gallery-image:nth-child(6n + 1),
+      sl-gallery-image:nth-child(6n + 2) {
+        max-width: 100%;
+        flex-basis: 45%;
+        --sl-gallery-item-height: calc(1 / (8 / 3) * 100%);
+      }
+    </style>
+
+    <div class="container">
+      <sl-gallery>
+        <sl-gallery-image
+            src="https://picsum.photos/1600/900/?image=255"
+            small="https://picsum.photos/800/450/?image=255"
+            title="This image has a title">
+        </sl-gallery-image>
+        <sl-gallery-image
+            src="https://picsum.photos/1600/900/?image=260"
+            small="https://picsum.photos/800/450/?image=260"
+            caption="This image has a caption... MEEP!">
+        </sl-gallery-image>
+        <sl-gallery-image
+            src="https://picsum.photos/1280/720/?image=257"
+            small="https://picsum.photos/400/225/?image=257">
+        </sl-gallery-image>
+        <sl-gallery-image
+            src="https://picsum.photos/1280/720/?image=258"
+            small="https://picsum.photos/400/225/?image=258">
+        </sl-gallery-image>
+        <sl-gallery-image
+            src="https://picsum.photos/1280/720/?image=259"
+            small="https://picsum.photos/400/225/?image=259">
+        </sl-gallery-image>
+        <sl-gallery-image
+            src="https://picsum.photos/1280/720/?image=256"
+            small="https://picsum.photos/400/225/?image=256">
+        </sl-gallery-image>
+        <sl-gallery-image
+            src="https://picsum.photos/1280/720/?image=261"
+            small="https://picsum.photos/400/225/?image=261">
+        </sl-gallery-image>
+        <sl-gallery-image
+            src="https://picsum.photos/1280/720/?image=263"
+            small="https://picsum.photos/400/225/?image=263">
+        </sl-gallery-image>
+        <sl-gallery-image
+            src="https://picsum.photos/1280/720/?image=264"
+            small="https://picsum.photos/400/225/?image=264">
+        </sl-gallery-image>
+        <sl-gallery-image
+            src="https://picsum.photos/1280/720/?image=265"
+            small="https://picsum.photos/400/225/?image=265">
+        </sl-gallery-image>
+        <sl-gallery-image
+            src="https://picsum.photos/1280/720/?image=267"
+            small="https://picsum.photos/400/225/?image=267">
+        </sl-gallery-image>
+        <sl-gallery-image
+            src="https://picsum.photos/1280/720/?image=268"
+            small="https://picsum.photos/400/225/?image=268">
+        </sl-gallery-image>
+      </sl-gallery>
+    </div>
+  </template>
+
+  <script>
+    class NancoViewGallery extends Polymer.Element {
+      static get is() { return 'nanco-view-gallery'; }
+    }
+
+    window.customElements.define(NancoViewGallery.is, NancoViewGallery);
+  </script>
+</dom-module>
