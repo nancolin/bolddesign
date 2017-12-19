@@ -12,22 +12,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="modules/nanco-info-card.html">
 <link rel="import" href="modules/nanco-resume-content.html">
 <link rel="import" href="modules/nanco-resume-sidebar.html">
+<link rel="import" href="shared-styles.html">
 
 <dom-module id="nanco-view-home">
   <template>
-    <style>
+    <style include="shared-styles">
       :host {
         display: block;
         padding-bottom: 2px;
-      }
-
-      .banner {
-        width: 100%;
-        height: auto;
-      }
-
-      .container {
-        margin: 36px 72px;
       }
 
       .content {
