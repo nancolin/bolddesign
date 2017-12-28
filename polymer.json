@@ -13,6 +13,7 @@
     "images/**/*"
   ],
   "extraDependencies": [
+    ".htaccess",
     "manifest.json",
     "bower_components/webcomponentsjs/*.js"
   ],
