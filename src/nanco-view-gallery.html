@@ -19,11 +19,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
 
-      sl-gallery-image:nth-child(6n + 1),
-      sl-gallery-image:nth-child(6n + 2) {
-        max-width: 100%;
-        flex-basis: 45%;
-        --sl-gallery-item-height: calc(1 / (8 / 3) * 100%);
+      @media (min-width: 841px) {
+        sl-gallery-image:nth-child(6n + 1),
+        sl-gallery-image:nth-child(6n + 2) {
+          max-width: 100%;
+          flex-basis: 45%;
+          --sl-gallery-item-height: calc(1 / (8 / 3) * 100%);
+        }
+      }
+
+      @media (max-width: 840px) {
+        sl-gallery {
+          --sl-gallery-columns: 2;
+        }
+
+        sl-gallery-image:nth-child(3n + 1) {
+          max-width: 100%;
+          flex-basis: 100%;
+          --sl-gallery-item-height: calc(1 / (8 / 3) * 100%);
+        }
+      }
+
+      @media (max-width: 600px) {
+        sl-gallery {
+          --sl-gallery-gutter: 4px;
+        }
       }
     </style>
 
