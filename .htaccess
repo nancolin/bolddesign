@@ -1,0 +1,47 @@
+Options -Indexes
+
+### Add Access-Control-Allow-Origin header for domain and all subdomains, ports, and protocols
+<IfModule mod_headers.c>
+  SetEnvIf Origin ^(https?://(?:.+\.)?nancolin\.nl(?::\d{1,5})?)$ CORS_ALLOW_ORIGIN=$1
+  Header append Access-Control-Allow-Origin %{CORS_ALLOW_ORIGIN}e env=CORS_ALLOW_ORIGIN
+  Header merge Vary "Origin"
+</IfModule>
+
+RewriteEngine on
+
+### Redirect /projects to subdomain
+RewriteCond %{HTTP_HOST} ^nancolin\.nl$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.nancolin\.nl$
+RewriteRule ^resume\/?(.*)$ "http\:\/\/resume\.nancolin\.nl\/$1" [R=301,L]
+
+### Remove preceeding www
+RewriteCond %{HTTP_HOST} ^www\.nancolin\.nl$
+RewriteRule ^(.*)$ "http\:\/\/nancolin\.nl\/$1" [R=301,L]
+
+### Enable GZIP compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+### Maintenance Redirection
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  ### Comment out the following conditional to enable redirection
+  RewriteCond %{REQUEST_URI} ^$a
+
+  RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
+  RewriteCond %{REMOTE_ADDR} !^174\.118\.194\.162$
+  RewriteCond %{REQUEST_URI} !/maintenance.html?$ [NC]
+  RewriteCond %{REQUEST_URI} !\.(jpe?g|png|gif|css|js|ico|map|txt)$ [NC]
+  RewriteCond %{REQUEST_FILENAME} !(styles|images).+$ [NC]
+  RewriteRule ^(.*)$  /maintenance.html? [R=307,L]
+</IfModule>
