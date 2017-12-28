@@ -1,0 +1,196 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="nanco-view-contact">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        --paper-input-container-invalid-color: #b7143c;
+      }
+
+      .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .flex-container > * {
+        flex: 1 1 280px;
+      }
+
+      .flex-container,
+      #subject {
+        margin-bottom: 8px;
+      }
+
+      form {
+        margin: 0 -8px;
+      }
+
+      paper-input,
+      paper-textarea {
+        margin: 0 8px;
+      }
+
+      paper-button {
+        width: calc(100% - 16px);
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin: 24px 8px 0;
+        --paper-button: {
+          background-color: var(--app-accent-color);
+          color: #fff;
+        };
+        --paper-button-disabled: {
+          background-color: #ccc;
+          color: #666;
+        };
+      }
+
+      paper-button[success] {
+        --paper-button-disabled: {
+          background-color: #329732;
+          color: #fff
+        };
+      }
+
+      paper-button[error] {
+        --paper-button-disabled: {
+          background-color: var(--paper-input-container-invalid-color);
+          color: #fff;
+        };
+      }
+    </style>
+
+    <div class="sub-container">
+      <h1>Contact</h1>
+      <p>Leave your message below.</p>
+      <form>
+        <div class="flex-container">
+          <paper-input id="name" type="text" label="Name" required
+              on-change="_validate" error-message="Please enter your name"></paper-input>
+          <paper-input id="email" type="email" label="Email" required
+              on-change="_validate" pattern="^[^@]+@[^@]+\.[^@]+$"
+              error-message="Please enter a valid email address"></paper-input>
+        </div>
+        <paper-input id="subject" type="text" label="Subject" required
+            on-change="_validate" error-message="Please enter a subject"></paper-input>
+        <paper-textarea id="message" label="Message"
+            placeholder="Type your message here" rows="6" required
+            on-input="_validate" error-message="Please enter a message"></paper-textarea>
+        <paper-button id="btn" raised on-click="_handleSubmit">Send</paper-button>
+      </form>
+    </div>
+
+    <iron-ajax
+        id="ajax"
+        url="/php/contact.php"
+        method="post"
+        content-type="application/x-www-form-urlencoded"
+        handle-as="json"
+        on-response="_handleResponse"
+        on-error="_handleError"
+        timeout="15000"
+        debounce-duration="300">
+    </iron-ajax>
+  </template>
+
+  <script>
+    class NancoViewContact extends Polymer.Element {
+
+      static get is() { return 'nanco-view-contact'; }
+
+      ready() {
+        super.ready();
+
+        this.inputs = [
+          this.$.name,
+          this.$.email,
+          this.$.subject,
+          this.$.message,
+        ];
+      }
+
+      _handleSubmit(event) {
+        this.$.btn.disabled = true;
+
+        // Validate form
+        const valid = [];
+        for (const input of this.inputs) {
+          valid.push(input.validate());
+        }
+        if (valid.includes(false)) {
+          this.$.btn.disabled = false;
+          return;
+        };
+
+        // Generate post body
+        const body = {};
+        for (const input of this.inputs) {
+          body[input.id] = input.value;
+        }
+
+        // Send post request
+        this.$.ajax.body = body;
+        this.$.ajax.generateRequest();
+      }
+
+      _handleResponse(event, request) {
+        // Send PHP error to `_handleError`
+        const response = event.detail.response;
+        if (!response.success) {
+          this._handleError(event, request);
+          const errorMessage = response.error || 'Unknown error.';
+          return console.error(`Sending failed: ${errorMessage}`);
+        }
+
+        // Show "SUCCESS" on button
+        const buttonText = this.$.btn.textContent;
+        this.$.btn.setAttribute('success', true);
+        this.$.btn.textContent = 'success';
+        setTimeout(() => {
+          this.$.btn.removeAttribute('success');
+          this.$.btn.textContent = buttonText;
+          this.$.btn.disabled = false;
+          this._reset();
+        }, 3000);
+      }
+
+      _handleError(event, request) {
+        // Show "ERROR" on button
+        const buttonText = this.$.btn.textContent;
+        this.$.btn.setAttribute('error', true);
+        this.$.btn.textContent = 'error';
+        setTimeout(() => {
+          this.$.btn.removeAttribute('error');
+          this.$.btn.textContent = buttonText;
+          this.$.btn.disabled = false;
+        }, 3000);
+      }
+
+      _validate(event) {
+        const el = event.currentTarget;
+        if (!el.value) {
+          el.invalid = false;
+        } else {
+          el.validate();
+        }
+      }
+
+      _reset() {
+        for (const input of this.inputs) {
+          input.value = '';
+          input.invalid = false;
+        }
+      }
+
+    }
+
+    window.customElements.define(NancoViewContact.is, NancoViewContact);
+  </script>
+</dom-module>

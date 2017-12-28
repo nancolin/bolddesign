@@ -25,7 +25,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="lazy-import" href="nanco-view-home.html">
 <link rel="lazy-import" href="nanco-view-gallery.html">
-<link rel="lazy-import" href="nanco-view-newview.html">
+<link rel="lazy-import" href="nanco-view-contact.html">
 <link rel="lazy-import" href="nanco-view-error404.html">
 
 <dom-module id="nanco-app">
@@ -34,6 +34,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         --app-primary-color: #fff;
         --app-secondary-color: #000;
+        --app-accent-color: #2f3334;
 
         display: block;
         margin: 0 auto;
@@ -66,7 +67,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           role="main">
         <nanco-view-home name="home"></nanco-view-home>
         <nanco-view-gallery name="gallery"></nanco-view-gallery>
-        <nanco-view-newview name="newview"></nanco-view-newview>
+        <nanco-view-contact name="contact"></nanco-view-contact>
         <nanco-view-error404 name="error404"></nanco-view-error404>
       </iron-pages>
 
