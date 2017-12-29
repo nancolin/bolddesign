@@ -28,7 +28,7 @@ RewriteRule ^(.*)$ "http\:\/\/nancolin\.nl\/$1" [R=301,L]
   RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1$
   RewriteCond %{REMOTE_ADDR} !^174\.118\.194\.162$
   RewriteCond %{REQUEST_URI} !/maintenance.html?$ [NC]
-  RewriteCond %{REQUEST_URI} !\.(jpe?g|png|gif|css|js|ico|map|txt)$ [NC]
+  RewriteCond %{REQUEST_URI} !\.(jpe?g|png|gif|svg|css|js|ico|map|txt)$ [NC]
   RewriteCond %{REQUEST_FILENAME} !(styles|images).+$ [NC]
   RewriteRule ^(.*)$  /maintenance.html? [R=307,L]
 </IfModule>
@@ -78,6 +78,7 @@ RewriteRule ^(.*)$ "http\:\/\/nancolin\.nl\/$1" [R=301,L]
   ExpiresByType image/jpg "access plus 2592000 seconds"
   ExpiresByType image/jpeg "access plus 2592000 seconds"
   ExpiresByType image/png "access plus 2592000 seconds"
+  ExpiresByType image/svg+xml "access plus 2592000 seconds"
   ExpiresByType text/css "access plus 604800 seconds"
   ExpiresByType text/javascript "access plus 86400 seconds"
   ExpiresByType text/x-javascript "access plus 86400 seconds"
@@ -87,7 +88,7 @@ RewriteRule ^(.*)$ "http\:\/\/nancolin\.nl\/$1" [R=301,L]
   ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
 </IfModule>
 <IfModule mod_headers.c>
-  <FilesMatch "\.(ico|pdf|jpe?g|png|gif|flv|swf)$">
+  <FilesMatch "\.(ico|pdf|jpe?g|png|gif|svg|flv|swf)$">
     # 30 days
     Header set Cache-Control "max-age=2592000, public"
   </FilesMatch>
