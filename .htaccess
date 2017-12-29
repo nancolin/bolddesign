@@ -12,11 +12,33 @@ RewriteEngine on
 ### Redirect /projects to subdomain
 RewriteCond %{HTTP_HOST} ^nancolin\.nl$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.nancolin\.nl$
-RewriteRule ^resume\/?(.*)$ "http\:\/\/resume\.nancolin\.nl\/$1" [R=301,L]
+RewriteRule ^projects\/?(.*)$ "http\:\/\/projects\.nancolin\.nl\/$1" [R=301,L]
 
 ### Remove preceeding www
 RewriteCond %{HTTP_HOST} ^www\.nancolin\.nl$
 RewriteRule ^(.*)$ "http\:\/\/nancolin\.nl\/$1" [R=301,L]
+
+### Redirect all non-existant pages to index.html
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  # Don't redirect specific file types
+  RewriteCond %{REQUEST_URI} \.(jpe?g|png|gif|svg|css|js|ico|map|txt)$ [NC,OR]
+
+  # Don't redirect my-<view>.html pattern for proper 404 pages
+  RewriteCond %{REQUEST_URI} nanco-.+\.html$ [NC,OR]
+
+  # Don't redirect any files which exist
+  RewriteCond %{REQUEST_FILENAME} -s [OR]
+  RewriteCond %{REQUEST_FILENAME} -l [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+
+  # If matches any exceptions, don't redirect
+  RewriteRule ^.*$ - [NC,L]
+
+  # If doesn't match any exceptions, redirect to `/index.html`
+  RewriteRule ^(.*) /index.html [NC,L]
+</IfModule>
 
 ### Maintenance Redirection
 <IfModule mod_rewrite.c>
@@ -57,36 +79,8 @@ RewriteRule ^(.*)$ "http\:\/\/nancolin\.nl\/$1" [R=301,L]
   AddOutputFilterByType DEFLATE text/plain
   AddOutputFilterByType DEFLATE text/xml
 </IfModule>
-<IfModule mod_gzip.c>
-  mod_gzip_on Yes
-  mod_gzip_dechunk Yes
-  mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
-  mod_gzip_item_include handler ^cgi-script$
-  mod_gzip_item_include mime ^text/.*
-  mod_gzip_item_include mime ^application/x-javascript.*
-  mod_gzip_item_exclude mime ^image/.*
-  mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
-</IfModule>
 
 # Leverage browser caching
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresDefault "access plus 1 seconds"
-  ExpiresByType text/html "access plus 1 seconds"
-  ExpiresByType image/x-icon "access plus 2592000 seconds"
-  ExpiresByType image/gif "access plus 2592000 seconds"
-  ExpiresByType image/jpg "access plus 2592000 seconds"
-  ExpiresByType image/jpeg "access plus 2592000 seconds"
-  ExpiresByType image/png "access plus 2592000 seconds"
-  ExpiresByType image/svg+xml "access plus 2592000 seconds"
-  ExpiresByType text/css "access plus 604800 seconds"
-  ExpiresByType text/javascript "access plus 86400 seconds"
-  ExpiresByType text/x-javascript "access plus 86400 seconds"
-  ExpiresByType application/javascript "access plus 86400 seconds"
-  ExpiresByType application/x-javascript "access plus 86400 seconds"
-  ExpiresByType application/pdf "access plus 2592000 seconds"
-  ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
-</IfModule>
 <IfModule mod_headers.c>
   <FilesMatch "\.(ico|pdf|jpe?g|png|gif|svg|flv|swf)$">
     # 30 days
@@ -96,16 +90,16 @@ RewriteRule ^(.*)$ "http\:\/\/nancolin\.nl\/$1" [R=301,L]
     # 7 days
     Header set Cache-Control "max-age=604800, public"
   </FilesMatch>
-  <FilesMatch "\.(js)$">
-    # 1 day
-    Header set Cache-Control "max-age=86400, private"
-  </FilesMatch>
   <FilesMatch "\.(xml|txt)$">
     # 2.5 days
     Header set Cache-Control "max-age=216000, public, must-revalidate"
   </FilesMatch>
+  <FilesMatch "\.(js)$">
+    # 1 day
+    Header set Cache-Control "max-age=86400, private"
+  </FilesMatch>
   <FilesMatch "\.(html|htm|php)$">
     # 0 days
-    Header set Cache-Control "max-age=1, private, must-revalidate"
+    Header set Cache-Control "max-age=0, private"
   </FilesMatch>
 </IfModule>
