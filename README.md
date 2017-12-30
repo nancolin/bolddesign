@@ -5,5 +5,5 @@ Nanco Lin's resume and information.
 ### TODO
 
 * Improve `nanco-header` responsiveness
-* Make `nanco-info-card` responsive
+* Debug php `mail` call in contact page
 * Add more stuff!

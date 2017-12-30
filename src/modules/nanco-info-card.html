@@ -5,6 +5,8 @@
     <style>
       :host {
         display: flex;
+        align-items: center;
+        justify-content: center;
         color: #fff;
       }
 
@@ -19,6 +21,7 @@
 
       .image {
         padding: 8px;
+        max-width: 100%;
         flex-basis: 200px;
       }
 
@@ -45,6 +48,20 @@
       .info-item span:nth-child(2) {
         font-weight: 900;
         letter-spacing: 1px;
+      }
+
+      @media (max-width: 920px) {
+        :host {
+          flex-direction: column;
+        }
+
+        .image {
+          flex-basis: unset;
+        }
+
+        .image img {
+          max-width: 100%;
+        }
       }
     </style>
 
