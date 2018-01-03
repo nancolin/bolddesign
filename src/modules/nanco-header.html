@@ -10,7 +10,7 @@
         padding: 48px;
       }
 
-      a {
+      *:not(.logo) a {
         font-size: 20px;
         font-weight: 600;
         color: #333;
@@ -20,7 +20,7 @@
                     color 0.5s ease-out;
       }
 
-      a:hover {
+      *:not(.logo) a:hover {
         border-bottom-color: #000;
         color: #000;
       }
@@ -44,6 +44,10 @@
         flex: 1 1 60%;
       }
 
+      .menu a {
+        display: inline-block;
+      }
+
       .menu > span {
         display: inline-block;
         padding-right: 32px;
@@ -65,8 +69,8 @@
       }
     </style>
     <div class="logo">
-      <img src="images/logo.svg" alt="Bold Design">
-      <img src="images/icon.svg" alt="Bold Design">
+      <a href="[[rootPath]]"><img src="images/logo.svg" alt="Bold Design"
+      ><img src="images/icon.svg" alt="Bold Design"></a>
     </div>
     <div class="menu">
       <span><a href="[[rootPath]]">Home</a></span>
