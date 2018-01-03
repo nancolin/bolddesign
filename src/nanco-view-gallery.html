@@ -19,7 +19,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
 
-      @media (min-width: 841px) {
+      h2 {
+        padding-top: 16px;
+        margin-top: 16px;
+        border-top: 1px solid #333;
+      }
+
+/*       @media (min-width: 841px) {
         sl-gallery-image:nth-child(6n + 1),
         sl-gallery-image:nth-child(6n + 2) {
           max-width: 100%;
@@ -44,12 +50,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         sl-gallery {
           --sl-gallery-gutter: 4px;
         }
-      }
+      } */
     </style>
 
     <div class="sub-container">
       <h1>Gallery</h1>
-      <sl-gallery>
+
+      <h2>Tweakers</h2>
+      <sl-gallery prefix="tweakers"></sl-gallery>
+
+      <h2>Tweakers Achmea</h2>
+      <sl-gallery prefix="tweakers-achmea"></sl-gallery>
+
+      <h2>Tweakers Passen</h2>
+      <sl-gallery prefix="tweakers-passen"></sl-gallery>
+
+      <!-- <sl-gallery>
         <sl-gallery-image
             src="https://picsum.photos/1600/900/?image=255"
             small="https://picsum.photos/800/450/?image=255"
@@ -100,13 +116,49 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             src="https://picsum.photos/1280/720/?image=268"
             small="https://picsum.photos/400/225/?image=268">
         </sl-gallery-image>
-      </sl-gallery>
+      </sl-gallery> -->
     </div>
   </template>
 
   <script>
     class NancoViewGallery extends Polymer.Element {
+
       static get is() { return 'nanco-view-gallery'; }
+
+      ready() {
+        super.ready();
+
+        fetch('/images/gallery/tweakers.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('tweakers', images);
+          });
+
+        fetch('/images/gallery/tweakers-achmea.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('tweakers-achmea', images);
+          });
+
+        fetch('/images/gallery/tweakers-passen.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('tweakers-passen', images);
+          });
+      }
+
+      _createImages(prefix, images) {
+        const gallery = this.shadowRoot.querySelector(`sl-gallery[prefix="${prefix}"]`);
+        images.forEach(img => {
+          const el = document.createElement('sl-gallery-image');
+          el.src = img.src || '';
+          el.small = img.small || '';
+          el.title = img.title || '';
+          el.caption = img.caption || '';
+          gallery.appendChild(el);
+        });
+      }
+
     }
 
     window.customElements.define(NancoViewGallery.is, NancoViewGallery);
