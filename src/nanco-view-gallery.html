@@ -33,33 +33,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         margin-top: 32px;
         border-top: 1px dotted #999;
       }
-
-      /* @media (min-width: 841px) {
-        sl-gallery-image:nth-child(6n + 1),
-        sl-gallery-image:nth-child(6n + 2) {
-          max-width: 100%;
-          flex-basis: 45%;
-          --sl-gallery-item-height: calc(1 / (8 / 3) * 100%);
-        }
-      }
-
-      @media (max-width: 840px) {
-        sl-gallery {
-          --sl-gallery-columns: 2;
-        }
-
-        sl-gallery-image:nth-child(3n + 1) {
-          max-width: 100%;
-          flex-basis: 100%;
-          --sl-gallery-item-height: calc(1 / (8 / 3) * 100%);
-        }
-      }
-
-      @media (max-width: 600px) {
-        sl-gallery {
-          --sl-gallery-gutter: 4px;
-        }
-      } */
     </style>
 
     <div class="sub-container">
@@ -72,58 +45,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h2>Tweakers Passen</h2>
       <sl-gallery prefix="tweakers-passen"></sl-gallery>
 
-      <!-- <sl-gallery>
-        <sl-gallery-image
-            src="https://picsum.photos/1600/900/?image=255"
-            small="https://picsum.photos/800/450/?image=255"
-            title="This image has a title">
-        </sl-gallery-image>
-        <sl-gallery-image
-            src="https://picsum.photos/1600/900/?image=260"
-            small="https://picsum.photos/800/450/?image=260"
-            caption="This image has a caption... MEEP!">
-        </sl-gallery-image>
-        <sl-gallery-image
-            src="https://picsum.photos/1280/720/?image=257"
-            small="https://picsum.photos/400/225/?image=257">
-        </sl-gallery-image>
-        <sl-gallery-image
-            src="https://picsum.photos/1280/720/?image=258"
-            small="https://picsum.photos/400/225/?image=258">
-        </sl-gallery-image>
-        <sl-gallery-image
-            src="https://picsum.photos/1280/720/?image=259"
-            small="https://picsum.photos/400/225/?image=259">
-        </sl-gallery-image>
-        <sl-gallery-image
-            src="https://picsum.photos/1280/720/?image=256"
-            small="https://picsum.photos/400/225/?image=256">
-        </sl-gallery-image>
-        <sl-gallery-image
-            src="https://picsum.photos/1280/720/?image=261"
-            small="https://picsum.photos/400/225/?image=261">
-        </sl-gallery-image>
-        <sl-gallery-image
-            src="https://picsum.photos/1280/720/?image=263"
-            small="https://picsum.photos/400/225/?image=263">
-        </sl-gallery-image>
-        <sl-gallery-image
-            src="https://picsum.photos/1280/720/?image=264"
-            small="https://picsum.photos/400/225/?image=264">
-        </sl-gallery-image>
-        <sl-gallery-image
-            src="https://picsum.photos/1280/720/?image=265"
-            small="https://picsum.photos/400/225/?image=265">
-        </sl-gallery-image>
-        <sl-gallery-image
-            src="https://picsum.photos/1280/720/?image=267"
-            small="https://picsum.photos/400/225/?image=267">
-        </sl-gallery-image>
-        <sl-gallery-image
-            src="https://picsum.photos/1280/720/?image=268"
-            small="https://picsum.photos/400/225/?image=268">
-        </sl-gallery-image>
-      </sl-gallery> -->
+      <h2>Tweakers Flyer</h2>
+      <sl-gallery prefix="tweakers-flyer"></sl-gallery>
+
+      <h2>Tweakers DS</h2>
+      <sl-gallery prefix="tweakers-ds"></sl-gallery>
+
+      <h2>Tweakers Meet-up</h2>
+      <sl-gallery prefix="tweakers-meet-up"></sl-gallery>
+
+      <h2>Blue Monday</h2>
+      <sl-gallery prefix="blue-monday"></sl-gallery>
+
+      <h2>Mission 1337</h2>
+      <sl-gallery prefix="mission-1337"></sl-gallery>
     </div>
   </template>
 
@@ -151,6 +86,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           .then(data => data.json())
           .then(images => {
             this._createImages('tweakers-passen', images);
+          });
+
+        fetch('/images/gallery/tweakers-flyer.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('tweakers-flyer', images);
+          });
+
+        fetch('/images/gallery/tweakers-ds.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('tweakers-ds', images);
+          });
+
+        fetch('/images/gallery/tweakers-meet-up.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('tweakers-meet-up', images);
+          });
+
+        fetch('/images/gallery/blue-monday.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('blue-monday', images);
+          });
+
+        fetch('/images/gallery/mission-1337.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('mission-1337', images);
           });
       }
 
