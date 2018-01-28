@@ -31,11 +31,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       h2:not(:first-of-type) {
         margin-top: 32px;
-        border-top: 1px dotted #999;
+        border-top: 0px dotted #999;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        padding: 4px 8px;
+      }
+
+      a {
+        color: var(--app-link-color);
+        font-size: 1.2em;
+      }
+
+      a:hover, a:active, a:focus {
+        color: var(--app-secondary-color);
       }
     </style>
 
     <div class="sub-container">
+      <h2>Project Links</h2>
+      <ul>
+        <li><a href="http://projects.nancolin.nl/brandstof/">Brandstof</a></li>
+        <li><a href="http://projects.nancolin.nl/klok/">Klok</a></li>
+        <li><a href="https://quizgame-ee661.firebaseapp.com/">React Quiz Game</a></li>
+      </ul>
+
       <h2>Tweakers</h2>
       <sl-gallery prefix="tweakers"></sl-gallery>
 
