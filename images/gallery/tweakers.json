@@ -1,15 +1,19 @@
 [
  {
   "src": "/images/gallery/tweakers/black_friday.png",
-  "title": "Tweakers"
+  "title": "Tweakers",
+  "caption": "Happy black friday! (promotie kaart naar partners)"
  }, {
   "src": "/images/gallery/tweakers/bureaugekkighaid.png",
-  "title": "Tweakers"
+  "title": "Tweakers",
+  "caption": "Contact kaart."
  }, {
   "src": "/images/gallery/tweakers/info_grafiek.png",
-  "title": "Tweakers"
+  "title": "Tweakers",
+  "caption": "Infografiek over de bezoekers op tweakers.com."
  }, {
   "src": "/images/gallery/tweakers/tweakers_express.png",
-  "title": "Tweakers"
+  "title": "Tweakers",
+  "caption": "Informatie over de tweakers express."
  }
 ]

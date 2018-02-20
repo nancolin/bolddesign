@@ -1,18 +1,21 @@
 [
  {
   "src": "/images/gallery/mission-1337/banners.png",
-  "title": "Mission 1337"
+  "title": "Mission 1337",
+  "caption": "Banner op de home pagina."
  }, {
   "src": "/images/gallery/mission-1337/flyer.png",
   "title": "Mission 1337"
  }, {
   "src": "/images/gallery/mission-1337/flyer2.png",
-  "title": "Mission 1337"
+  "title": "Mission 1337",
+  "caption": "Flyer die ik gemaakt voor Mission 1337."
  }, {
   "src": "/images/gallery/mission-1337/landings_pagina.png",
   "title": "Mission 1337"
  }, {
   "src": "/images/gallery/mission-1337/photo.jpg",
-  "title": "Mission 1337"
+  "title": "Mission 1337",
+  "caption": "Foto van de dat dat wij op de hoge school van enschede stonden."
  }
 ]
