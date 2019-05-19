@@ -1,0 +1,15 @@
+[
+  {
+    "src": "/images/gallery/banners/horeca-inrichting.jpg",
+    "small": "/images/gallery/banners/thumbs/horeca-inrichting.jpg"
+  }, {
+    "src": "/images/gallery/banners/kantoorinrichting.jpg",
+    "small": "/images/gallery/banners/thumbs/kantoorinrichting.jpg"
+  }, {
+    "src": "/images/gallery/banners/magazijn-inrichting-toebehoren.jpg",
+    "small": "/images/gallery/banners/thumbs/magazijn-inrichting-toebehoren.jpg"
+  }, {
+    "src": "/images/gallery/banners/medische-artikelen.jpg",
+    "small": "/images/gallery/banners/thumbs/medische-artikelen.jpg"
+  }
+]
