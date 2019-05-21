@@ -52,6 +52,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       a:hover, a:active, a:focus {
         color: var(--app-secondary-color);
       }
+
+      hr {
+        margin-top: 48px;
+      }
     </style>
 
     <div class="sub-container">
@@ -63,12 +67,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <li><a href="https://kantoorprofi.nl/" target="_blank">Kantoorprofi</a></li>
       </ul>
 
-      <h2>Wordpress</h2>
+      <h2>Wordpress websites</h2>
       <ul>
         <li><a href="https://www.poosassurantien.nl/" target="_blank">Poos Assuranti&euml;n</a></li>
         <li><a href="https://www.ltbinfra.nl/" target="_blank">Ltb Infra</a></li>
         <li><a href="https://palletpapier.expert/" target="_blank">Palletpapier.expert</a></li>
       </ul>
+
+      <h2>Boek met sprokjes verhalen</h2>
+      <sl-gallery prefix="boek"></sl-gallery>
+
+      <hr>
 
       <h2>Tweakers</h2>
       <sl-gallery prefix="tweakers"></sl-gallery>
@@ -93,6 +102,46 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <h2>Mission 1337</h2>
       <sl-gallery prefix="mission-1337"></sl-gallery>
+
+      <hr>
+
+      <h2>Brand Guidelines KantoorProfi</h2>
+      <sl-gallery prefix="brand-guidelines-kantoor_profi-2"></sl-gallery>
+
+      <h2>A5 Flyer</h2>
+      <sl-gallery prefix="a5-flyer-print"></sl-gallery>
+
+      <h2>Banners</h2>
+      <sl-gallery prefix="banners"></sl-gallery>
+
+      <h2>Folder</h2>
+      <sl-gallery prefix="folder"></sl-gallery>
+
+      <hr>
+
+      <h2>Briefpapier Lob</h2>
+      <sl-gallery prefix="briefpapier-lob"></sl-gallery>
+
+      <h2>Lob</h2>
+      <sl-gallery prefix="lob"></sl-gallery>
+
+      <h2>Magazine</h2>
+      <sl-gallery prefix="magazine"></sl-gallery>
+
+      <h2>MMKA</h2>
+      <sl-gallery prefix="mmka"></sl-gallery>
+
+      <h2>Opstel</h2>
+      <sl-gallery prefix="opstel"></sl-gallery>
+
+      <h2>Plategrond 3luik</h2>
+      <sl-gallery prefix="plategrond-3luik"></sl-gallery>
+
+      <h2>Plategrond 4luik</h2>
+      <sl-gallery prefix="plategrond-4luik"></sl-gallery>
+
+      <!-- <h2>Report</h2>
+      <sl-gallery prefix="report"></sl-gallery> -->
     </div>
   </template>
 
@@ -151,6 +200,84 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           .then(images => {
             this._createImages('mission-1337', images);
           });
+
+        fetch('/images/gallery/a5-flyer-print.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('a5-flyer-print', images);
+          });
+
+        fetch('/images/gallery/banners.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('banners', images);
+          });
+
+        fetch('/images/gallery/boek.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('boek', images);
+          });
+
+        fetch('/images/gallery/brand-guidelines-kantoor_profi-2.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('brand-guidelines-kantoor_profi-2', images);
+          });
+
+        fetch('/images/gallery/briefpapier-lob.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('briefpapier-lob', images);
+          });
+
+        fetch('/images/gallery/folder.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('folder', images);
+          });
+
+        fetch('/images/gallery/lob.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('lob', images);
+          });
+
+        fetch('/images/gallery/magazine.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('magazine', images);
+          });
+
+        fetch('/images/gallery/mmka.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('mmka', images);
+          });
+
+        fetch('/images/gallery/opstel.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('opstel', images);
+          });
+
+        fetch('/images/gallery/plategrond-3luik.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('plategrond-3luik', images);
+          });
+
+        fetch('/images/gallery/plategrond-4luik.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('plategrond-4luik', images);
+          });
+
+        /* fetch('/images/gallery/report.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('report', images);
+          }); */
       }
 
       _createImages(prefix, images) {
