@@ -56,9 +56,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       hr {
         margin-top: 48px;
       }
+
+      sl-gallery {
+        overflow: unset;
+      }
     </style>
 
-    <div class="sub-container">
+    <div id="container" class="sub-container">
       <h2>Project Links</h2>
       <ul>
         <li><a href="http://projects.nancolin.nl/brandstof/" target="_blank">Brandstof</a></li>
@@ -152,6 +156,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       ready() {
         super.ready();
+
+        window.addEventListener('resize', this._handleResize.bind(this));
+        this._handleResize();
 
         fetch('/images/gallery/tweakers.json')
           .then(data => data.json())
@@ -280,8 +287,36 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           }); */
       }
 
+      _customizeStyles(gallery) {
+        const style = document.createElement('style');
+        style.textContent = `
+          .image-grid {
+            flex-wrap: unset;
+            overflow-x: auto;
+          }
+          .image-grid::-webkit-scrollbar {
+              -webkit-appearance: none;
+          }
+          .image-grid::-webkit-scrollbar:horizontal {
+              height: 20px;
+          }
+          .image-grid::-webkit-scrollbar-thumb {
+              background-color: rgba(0,0,0,0.5);
+              border-radius: 8px;
+              border: 2px solid none;
+          }
+          .image-grid::-webkit-scrollbar-track {
+              border-radius: 10px;
+              background-color: none;
+              border: 2px solid none;
+          }
+        `;
+        gallery.shadowRoot.appendChild(style);
+      }
+
       _createImages(prefix, images) {
         const gallery = this.shadowRoot.querySelector(`sl-gallery[prefix="${prefix}"]`);
+        this._customizeStyles(gallery);
         images.forEach(img => {
           const el = document.createElement('sl-gallery-image');
           el.src = img.src || '';
@@ -290,6 +325,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           el.caption = img.caption || '';
           gallery.appendChild(el);
         });
+      }
+
+      _handleResize() {
+        const containerWidth = this.$.container.getBoundingClientRect().width;
+        if (!this.dynamicStyle) {
+          this.dynamicStyle = document.createElement('style');
+          this.shadowRoot.appendChild(this.dynamicStyle);
+        }
+        let columns;
+        if (containerWidth > 840) {
+          columns = 4;
+        } else if (containerWidth > 600) {
+          columns = 3;
+        } else {
+          columns = 2;
+        }
+        this.dynamicStyle.textContent = `
+          sl-gallery {
+            --sl-gallery-columns: ${columns};
+          }
+          sl-gallery-image {
+            flex: 0 0 ${containerWidth / columns}px;
+          }
+        `;
       }
 
     }
