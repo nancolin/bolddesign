@@ -1,0 +1,94 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="nanco-image">
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+
+        --aspect-ratio: 4/3;
+      }
+
+      :host([hidden]) {
+        display: none;
+      }
+
+      *, *::before, *::after {
+        box-sizing: inherit;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--app-link-color, inherit);
+      }
+
+      a:hover, a:focus, a:active {
+        text-decoration: underline;
+      }
+
+      .image, .text {
+        width: 100%;
+      }
+
+      .image {
+        position: relative;
+      }
+
+      .image::before {
+        content: "";
+        display: block;
+        padding-bottom: calc(100% / (var(--aspect-ratio)));
+      }
+
+      .image img {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        background-color: var(--app-accent-color);
+        color: var(--app-primary-color);
+      }
+
+      .text {
+        text-align: center;
+        padding: 8px;
+      }
+    </style>
+
+    <div class="image">
+      <a href="[[href]]" target="_blank" rel="noopener noreferrer">
+        <img src="[[src]]" alt="[[text]]">
+      </a>
+    </div>
+
+    <div class="text">
+      <a href="[[href]]" target="_blank" rel="noopener noreferrer">
+        [[text]]
+      </a>
+    </div>
+
+  </template>
+
+  <script>
+    class NancoImage extends Polymer.Element {
+
+      static get is() { return 'nanco-image'; }
+
+      static get properties() {
+        return {
+          href: String,
+          text: String,
+          src: String,
+        };
+      }
+
+    }
+
+    window.customElements.define(NancoImage.is, NancoImage);
+  </script>
+</dom-module>

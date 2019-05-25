@@ -11,6 +11,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../bower_components/sl-gallery/sl-gallery.html">
 <link rel="import" href="shared-styles.html">
+<link rel="import" href="modules/nanco-image.html">
 
 <dom-module id="nanco-view-gallery">
   <template>
@@ -29,21 +30,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding-top: 0;
       }
 
-      h2:not(:first-of-type) {
-        margin-top: 32px;
-        border-top: 0px dotted #999;
-      }
-
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      li {
-        padding: 4px 8px;
-      }
-
       a {
         color: var(--app-link-color);
         font-size: 1.2em;
@@ -54,34 +40,108 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       hr {
+        margin-top: 16px;
+      }
+
+      hr.separator {
         margin-top: 48px;
       }
 
       sl-gallery {
         overflow: unset;
       }
+
+      .links-grid {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .links-grid > * {
+        flex-basis: calc(25% - 16px);
+        margin: 8px;
+      }
+
+      @media (max-width: 840px) {
+        .links-grid > * {
+          flex-basis: calc(33.33333333333% - 16px);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .links-grid > * {
+          flex-basis: calc(50% - 8px);
+          margin: 4px;
+        }
+      }
     </style>
 
     <div id="container" class="sub-container">
       <h2>Project Links</h2>
-      <ul>
-        <li><a href="http://projects.nancolin.nl/brandstof/" target="_blank">Brandstof</a></li>
-        <li><a href="http://projects.nancolin.nl/klok/" target="_blank">Klok</a></li>
-        <li><a href="https://quizgame-63308.firebaseapp.com/" target="_blank">React Quiz Game</a></li>
-        <li><a href="https://kantoorprofi.nl/" target="_blank">Kantoorprofi</a></li>
-      </ul>
+      <div class="links-grid">
+        <nanco-image
+            text="Brandstof"
+            href="http://projects.nancolin.nl/brandstof/"
+            src="../images/projects/thumbs/brandstof.jpg">
+        </nanco-image>
+        <nanco-image
+            text="Klok"
+            href="http://projects.nancolin.nl/klok/"
+            src="../images/projects/thumbs/klok.jpg">
+        </nanco-image>
+        <nanco-image
+            text="React Quiz Game"
+            href="https://quizgame-63308.firebaseapp.com/"
+            src="../images/projects/thumbs/react_quiz_game.jpg">
+        </nanco-image>
+        <nanco-image
+            text="Kantoorprofi"
+            href="https://kantoorprofi.nl/"
+            src="../images/projects/thumbs/kantoorprofi.jpg">
+        </nanco-image>
+      </div>
 
-      <h2>Wordpress websites</h2>
-      <ul>
-        <li><a href="https://www.poosassurantien.nl/" target="_blank">Poos Assuranti&euml;n</a></li>
-        <li><a href="https://www.ltbinfra.nl/" target="_blank">Ltb Infra</a></li>
-        <li><a href="https://palletpapier.expert/" target="_blank">Palletpapier.expert</a></li>
-      </ul>
+      <hr>
+
+      <h2>Wordpress Websites</h2>
+      <div class="links-grid">
+        <nanco-image
+            text="Poos Assurantiën"
+            href="https://www.poosassurantien.nl/"
+            src="../images/wordpress/thumbs/poos-assurantien.jpg">
+        </nanco-image>
+        <nanco-image
+            text="Ltb Infra"
+            href="https://www.ltbinfra.nl/"
+            src="../images/wordpress/thumbs/ltb-infra.jpg">
+        </nanco-image>
+        <nanco-image
+            text="Palletpapier.expert"
+            href="https://palletpapier.expert/"
+            src="../images/wordpress/thumbs/palletpapier-export.jpg">
+        </nanco-image>
+      </div>
+
+      <hr>
 
       <h2>Boek met sprokjes verhalen</h2>
       <sl-gallery prefix="boek"></sl-gallery>
 
-      <hr>
+      <hr class="separator">
+
+      <h2>Brand Guidelines KantoorProfi</h2>
+      <sl-gallery prefix="brand-guidelines-kantoor_profi-2"></sl-gallery>
+
+      <h2>A5 Flyer</h2>
+      <sl-gallery prefix="a5-flyer-print"></sl-gallery>
+
+      <h2>Banners</h2>
+      <sl-gallery prefix="banners"></sl-gallery>
+
+      <h2>Folder</h2>
+      <sl-gallery prefix="folder"></sl-gallery>
+
+      <hr class="separator">
 
       <h2>Tweakers</h2>
       <sl-gallery prefix="tweakers"></sl-gallery>
@@ -107,21 +167,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h2>Mission 1337</h2>
       <sl-gallery prefix="mission-1337"></sl-gallery>
 
-      <hr>
-
-      <h2>Brand Guidelines KantoorProfi</h2>
-      <sl-gallery prefix="brand-guidelines-kantoor_profi-2"></sl-gallery>
-
-      <h2>A5 Flyer</h2>
-      <sl-gallery prefix="a5-flyer-print"></sl-gallery>
-
-      <h2>Banners</h2>
-      <sl-gallery prefix="banners"></sl-gallery>
-
-      <h2>Folder</h2>
-      <sl-gallery prefix="folder"></sl-gallery>
-
-      <hr>
+      <hr class="separator">
 
       <h2>Briefpapier Lob</h2>
       <sl-gallery prefix="briefpapier-lob"></sl-gallery>
