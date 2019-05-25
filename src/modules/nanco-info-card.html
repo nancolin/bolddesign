@@ -8,6 +8,8 @@
         align-items: center;
         justify-content: center;
         color: #fff;
+
+        --info-card-image-width: 300px;
       }
 
       img {
@@ -22,7 +24,11 @@
       .image {
         padding: 8px;
         max-width: 100%;
-        flex-basis: 200px;
+        flex-basis: var(--info-card-image-width);
+      }
+
+      .image img {
+        max-width: 100%;
       }
 
       .info-wrapper {
@@ -57,10 +63,7 @@
 
         .image {
           flex-basis: unset;
-        }
-
-        .image img {
-          max-width: 100%;
+          max-width: var(--info-card-image-width);
         }
       }
     </style>
