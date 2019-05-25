@@ -21,8 +21,8 @@ elseif (preg_match('/[\r\n]/', $_POST['subject'])) {
 else {
   $data = [
     'userdata' => $_POST['name'].' <'.$_POST['email'].'>',
-    'from' => $_POST['name'].' <bold-design@nancolin.nl>',
-    'sender' => 'Bold Design Contact <bold-design@nancolin.nl>',
+    'from' => $_POST['name'].' <contact@nancolin.nl>',
+    'sender' => 'Bold Design Contact <contact@nancolin.nl>',
     'subject' => $_POST['subject'],
     'message' => quoted_printable_encode($_POST['message']),
   ];
@@ -39,7 +39,11 @@ else {
   /* Windows servers only! */
   // $data['message'] = str_replace("\n.", "\n..", $data['message']);
 
-  $response['success'] = mail('nancolin@hotmail.com', $data['subject'], $data['message'], implode("\r\n", $headers));
+  $response['success'] = mail('nancolin92@gmail.com', $data['subject'], $data['message'], implode("\r\n", $headers));
+
+  if (!$response['success']) {
+    $response['error'] = error_get_last()['message'];
+  }
 }
 
 header('Content-Type: application/json; charset=utf-8');
