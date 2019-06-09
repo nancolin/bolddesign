@@ -13,7 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="modules/nanco-image.html">
 
-<dom-module id="nanco-view-gallery">
+<dom-module id="nanco-view-portfolio">
   <template>
     <style include="shared-styles">
       :host {
@@ -103,7 +103,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <hr>
 
-      <h2>Wordpress Websites</h2>
+      <h2>Wordpress Website Links</h2>
       <div class="links-grid">
         <nanco-image
             text="Poos Assurantiën"
@@ -196,9 +196,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
 
   <script>
-    class NancoViewGallery extends Polymer.Element {
+    class NancoViewPortfolio extends Polymer.Element {
 
-      static get is() { return 'nanco-view-gallery'; }
+      static get is() { return 'nanco-view-portfolio'; }
 
       ready() {
         super.ready();
@@ -399,6 +399,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     }
 
-    window.customElements.define(NancoViewGallery.is, NancoViewGallery);
+    window.customElements.define(NancoViewPortfolio.is, NancoViewPortfolio);
   </script>
 </dom-module>

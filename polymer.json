@@ -3,7 +3,7 @@
   "shell": "src/nanco-app.html",
   "fragments": [
     "src/nanco-view-home.html",
-    "src/nanco-view-gallery.html",
+    "src/nanco-view-portfolio.html",
     "src/nanco-view-contact.html",
     "src/nanco-view-error404.html"
   ],
