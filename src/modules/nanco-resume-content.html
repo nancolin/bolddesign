@@ -5,60 +5,175 @@
     <style>
       :host {
         display: block;
+        box-sizing: border-box;
+
+        --resume-content-title-offset: 72px;
       }
 
-      .underline {
-        text-decoration: underline;
+      *, *::before, *::after {
+        box-sizing: inherit;
+      }
+
+      .title {
+        background-color: var(--app-accent-color);
+        margin: 0 16px;
+        margin-left: calc(var(--resume-content-title-offset) * -1);
+        padding-left: var(--resume-content-title-offset);
+        width: calc(100% + var(--resume-content-title-offset));
+        height: 48px;
+      }
+
+      .title > div {
+        display: inline-flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 0 16px;
+        height: 48px;
+      }
+
+      .title h2 {
+        display: inline-block;
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 24px;
+      }
+
+      .content-box {
+        margin: 16px 0 32px;
+      }
+
+      .content-box p {
+        margin: 0;
+      }
+
+      .content-box > * {
+        display: flex;
+        align-items: center;
+      }
+
+      .content-box > *:not(:first-child) {
+        border-top: 2px solid #e8e8e8;
+        margin: 16px 0;
+        padding: 16px 0 0;
+      }
+
+      .content-box > *:last-child {
+        margin-bottom: 0;
+      }
+
+      .content-box .logo {
+        flex: 0 0 80px;
+        margin-right: 8px;
+      }
+
+      .content-box .logo img {
+        width: 100%;
+        height: auto;
+      }
+
+      .content-box .text {
+        flex: 1;
+      }
+
+      .content-box .text .date {
+        font-weight: 600;
+        margin-bottom: 8px;
       }
     </style>
-    <h3>Opleiding</h3>
 
-    <p>2005 &ndash; 2009<br>
-    Stedelijk Dalton College, vmbo-kb, Zutphen.<br>
-    Richting Grafiemedia, Engels, Nederlands, wiskunde.<br>
-    Diploma behaald</p>
+    <div class="title">
+      <div><h2>Opleiding</h2></div>
+    </div>
 
-    <p>2009 &ndash; 2014<br>
-    Deltion College, grafisch vormgever, Mbo niveau 4, Zwolle.<br>
-    Diploma behaald.</p>
+    <div class="content-box">
+      <div>
+        <div class="logo"><img src="../../images/logos/opleiding/stedelijk.jpg" alt=""></div>
+        <div class="text">
+          <p class="date">2005 &ndash; 2009</p>
+          <p>Stedelijk Dalton College, vmbo-kb, Zutphen.<br>
+          Richting Grafiemedia, Engels, Nederlands, wiskunde.<br>
+          Diploma behaald</p>
+        </div>
+      </div>
 
-    <p>2015 &ndash; 2019<br>
-    Saxion, Kunst en Techniek, Hbo, Enschede.<br>
-    Diploma behaald.</p>
+      <div>
+        <div class="logo"><img src="../../images/logos/opleiding/deltion.jpg" alt=""></div>
+        <div class="text">
+          <p class="date">2009 &ndash; 2014</p>
+          <p>Deltion College, grafisch vormgever, Mbo niveau 4, Zwolle.<br>
+          Diploma behaald.</p>
+        </div>
+      </div>
 
-    <h3>Werk</h3>
+      <div>
+        <div class="logo"><img src="../../images/logos/opleiding/saxion.jpg" alt=""></div>
+        <div class="text">
+          <p class="date">2015 &ndash; 2019</p>
+          <p>Saxion, Kunst en Techniek, Hbo, Enschede.<br>
+          Diploma behaald.</p>
+        </div>
+      </div>
+    </div>
 
-    <p>Zomer vakantie 2008<br>
-    Afwassen Hanze-stadsbrouwerij Zutphen</p>
+    <div class="title">
+      <div><h2>Werk (Stage)</h2></div>
+    </div>
 
-    <p>2008 &ndash; 2009<br>
-    Vakkenvuller Supermarkt Jumbo Zutphen</p>
+    <div class="content-box">
+      <div>
+        <div class="logo"><img src="../../images/logos/werk/smurfit_kappa.jpg" alt=""></div>
+        <div class="text">
+          <p class="date">2008</p>
+          <p>Smurfit Kappa, Deventer.<br>
+          Snuffelstage bij de D.T.P. drukkerij en nabewerking.</p>
+        </div>
+      </div>
 
-    <p class="underline">Stage</p>
+      <div>
+        <div class="logo"><img src="../../images/logos/werk/weevers.jpg" alt=""></div>
+        <div class="text">
+          <p class="date">2009</p>
+          <p>Drukkerij Weevers, Vorden<br>
+          Snuffelstage bij de dtp drukkerij en nabewerking.</p>
+        </div>
+      </div>
 
-    <p>2008<br>
-    Smurfit Kappa, Deventer.<br>
-    Snuffelstage bij de D.T.P. drukkerij en nabewerking.</p>
+      <div>
+        <div class="logo"><img src="../../images/logos/werk/eijerkamp.jpg" alt=""></div>
+        <div class="text">
+          <p class="date">2011</p>
+          <p>Eijerkamp, Zutphen<br>
+          Ontwerper, D.T.P.</p>
+        </div>
+      </div>
 
-    <p>2009<br>
-    Drukkerij Weevers, Vorden<br>
-    Snuffelstage bij de dtp drukkerij en nabewerking.</p>
+      <div>
+        <div class="logo"><img src="../../images/logos/werk/trace.jpg" alt=""></div>
+        <div class="text">
+          <p class="date">2013</p>
+          <p>Trace, Apeldoorn<br>
+          Ontwerper, D.T.P</p>
+        </div>
+      </div>
 
-    <p>2011<br>
-    Eijerkamp, Zutphen<br>
-    Ontwerper, D.T.P.</p>
+      <div>
+        <div class="logo"><img src="../../images/logos/werk/tweakers.jpg" alt=""></div>
+        <div class="text">
+          <p class="date">2016</p>
+          <p>Tweakers, Amsterdam<br>
+          Ontwerper, D.T.P.</p>
+        </div>
+      </div>
 
-    <p>2013<br>
-    Trace, Apeldoorn<br>
-    Ontwerper, D.T.P</p>
-
-    <p>2016<br>
-    Tweakers, Amsterdam<br>
-    Ontwerper, D.T.P.</p>
-
-    <p>2018<br>
-    Kantoorprofi.nl, Bemmel<br>
-    Afstuderen, Ondwerp</p>
+      <div>
+        <div class="logo"><img src="../../images/logos/werk/kantoorprofi.jpg" alt=""></div>
+        <div class="text">
+          <p class="date">2018</p>
+          <p>Kantoorprofi.nl, Bemmel<br>
+          Afstuderen, Ondwerp</p>
+        </div>
+      </div>
+    </div>
   </template>
 
   <script>
