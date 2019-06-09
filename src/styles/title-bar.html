@@ -38,6 +38,16 @@
         bottom: -1px;
         z-index: -1;
       }
+
+      @media (max-width: 840px) {
+        :host {
+          --nanco-title-bar-offset: 48px;
+        }
+
+        .title-bar {
+          width: calc(100% + calc(var(--nanco-title-bar-offset) * 2) - 1px);
+        }
+      }
     </style>
   </template>
 </dom-module>

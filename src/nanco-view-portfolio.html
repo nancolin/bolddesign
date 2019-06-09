@@ -19,6 +19,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles title-bar">
       :host {
         display: block;
+        box-sizing: border-box;
+      }
+
+      *, *::before, *::after {
+        box-sizing: inherit;
       }
 
       #container > h2 {
@@ -106,7 +111,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </div>
 
       <div class="title-bar">
-        <h2>Wordpress Website Links</h2>
+        <h2>Wordpress Websites</h2>
       </div>
       <div class="links-grid">
         <nanco-image
