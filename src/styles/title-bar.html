@@ -1,0 +1,35 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="title-bar">
+  <template>
+    <style>
+      :host {
+        --nanco-title-bar-offset: 72px;
+      }
+
+      .title-bar {
+        background-color: var(--app-accent-color);
+        margin: 0 16px;
+        margin-left: calc(var(--nanco-title-bar-offset) * -1);
+        padding-left: var(--nanco-title-bar-offset);
+        width: calc(100% + var(--nanco-title-bar-offset));
+        height: 48px;
+      }
+
+      .title-bar > div {
+        display: inline-flex;
+        align-items: center;
+        background-color: #fff;
+        padding: 0 16px;
+        height: 48px;
+      }
+
+      .title-bar h2 {
+        display: inline-block;
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 24px;
+      }
+    </style>
+  </template>
+</dom-module>
