@@ -1,6 +1,9 @@
 bower_components/
 build/
 node_modules/
+php/_private/*
+!php/_private/.htaccess
+!php/_private/*.sample.php
 php/vendor/
 *.sublime-*
 /__*
