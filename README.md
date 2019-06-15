@@ -7,7 +7,7 @@ Nanco Lin's resume and information.
 To install dependencies run:
 
 ```sh
-bower install
+npm run init
 ```
 
 ### Usage

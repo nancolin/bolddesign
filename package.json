@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "polymer build",
-    "init": "npm install && npm run init:php",
+    "init": "bower install && npm run init:php",
     "init:php": "cd php && (composer install; cd ..)",
     "lint": "npm run lint:javascript && polymer lint",
     "lint:javascript": "eslint . --ext js,html --ignore-path .gitignore",
