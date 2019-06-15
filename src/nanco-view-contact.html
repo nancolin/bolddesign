@@ -42,28 +42,23 @@
         font-weight: 500;
         letter-spacing: 1px;
         margin: 24px 8px 0;
-        --paper-button: {
-          background-color: var(--app-accent-color);
-          color: #fff;
-        };
-        --paper-button-disabled: {
-          background-color: #ccc;
-          color: #666;
-        };
+        background-color: var(--app-accent-color);
+        color: #fff;
       }
 
-      paper-button[success] {
-        --paper-button-disabled: {
-          background-color: #329732;
-          color: #fff
-        };
+      paper-button[disabled] {
+        background-color: #ccc;
+        color: #666;
       }
 
-      paper-button[error] {
-        --paper-button-disabled: {
-          background-color: var(--paper-input-container-invalid-color);
-          color: #fff;
-        };
+      paper-button[disabled][success] {
+        background-color: #329732;
+        color: #fff
+      }
+
+      paper-button[disabled][error] {
+        background-color: var(--paper-input-container-invalid-color);
+        color: #fff;
       }
     </style>
 
