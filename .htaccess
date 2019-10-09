@@ -9,14 +9,23 @@ Options -Indexes
 
 RewriteEngine on
 
+### FORCE SSL
+RewriteCond %{HTTPS} !on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+### STRONG HTACCESS PROTECTION
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+ order allow,deny
+ deny from all
+</Files>
+
 ### Redirect /projects to subdomain
-RewriteCond %{HTTP_HOST} ^nancolin\.nl$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.nancolin\.nl$
-RewriteRule ^projects\/?(.*)$ "http\:\/\/projects\.nancolin\.nl\/$1" [R=301,L]
+RewriteCond %{HTTP_HOST} ^(www\.)?nancolin\.nl$
+RewriteRule ^projects\/?(.*)$ "https\:\/\/projects\.nancolin\.nl\/$1" [R=301,L]
 
 ### Remove preceeding www
 RewriteCond %{HTTP_HOST} ^www\.nancolin\.nl$
-RewriteRule ^(.*)$ "http\:\/\/nancolin\.nl\/$1" [R=301,L]
+RewriteRule ^(.*)$ "https\:\/\/nancolin\.nl\/$1" [R=301,L]
 
 ### Redirect all non-existant pages to index.html
 <IfModule mod_rewrite.c>
