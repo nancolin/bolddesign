@@ -33,14 +33,14 @@ else {
     $mail = new PHPMailer(true);
 
     // Server settings
-    $mail->SMTPDebug = 0;                               // Enable verbose debug output
-    $mail->isSMTP();                                    // Set mailer to use SMTP
-    $mail->Host       = 'mail.gandi.net';               // Specify main and backup SMTP servers
-    $mail->SMTPAuth   = true;                           // Enable SMTP authentication
-    $mail->Username   = 'contact@nancolin.nl';          // SMTP username
-    $mail->Password   = $credentials['email_password']; // SMTP password
-    $mail->SMTPSecure = 'ssl';                          // Enable TLS encryption, `ssl` also accepted
-    $mail->Port       = 465;                            // TCP port to connect to
+    // $mail->SMTPDebug = 2;                               // Enable verbose debug output
+    // $mail->isSMTP();                                    // Set mailer to use SMTP
+    // $mail->Host       = 'mail.gandi.net';               // Specify main and backup SMTP servers
+    // $mail->SMTPAuth   = true;                           // Enable SMTP authentication
+    // $mail->Username   = 'contact@nancolin.nl';          // SMTP username
+    // $mail->Password   = $credentials['email_password']; // SMTP password
+    // $mail->SMTPSecure = 'ssl';                          // Enable TLS encryption, `ssl` also accepted
+    // $mail->Port       = 465;                            // TCP port to connect to
 
     // Recipients
     $mail->setFrom('contact@nancolin.nl', $_POST['name']);
