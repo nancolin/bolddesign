@@ -7,3 +7,4 @@ php/_private/*
 php/vendor/
 *.sublime-*
 /__*
+/ftp-credentials.sh

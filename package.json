@@ -14,6 +14,7 @@
     "lint:javascript": "eslint . --ext js,html --ignore-path .gitignore",
     "start": "polymer serve -o",
     "test": "polymer test",
-    "test:integration": "polymer build # test that psk builds without error with the CLI"
+    "test:integration": "polymer build # test that psk builds without error with the CLI",
+    "upload": "source ./ftp-credentials.sh && lftp ftp.nancolin.nl -u $ftp_username,$ftp_password -e 'set ssl:verify-certificate no; set ftp:prefer-epsv no; set ftp:ssl-force yes; set mirror:set-permissions no; mirror -R -P 5 build/es5-bundled /; quit'"
   }
 }
