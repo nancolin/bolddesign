@@ -115,9 +115,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h2>Tweakers</h2>
       <sl-gallery prefix="tweakers"></sl-gallery>
 
-      <h2>Tweakers Achmea</h2>
-      <sl-gallery prefix="tweakers-achmea"></sl-gallery>
-
       <h2>Tweakers Passen</h2>
       <sl-gallery prefix="tweakers-passen"></sl-gallery>
 
@@ -223,12 +220,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           .then(data => data.json())
           .then(images => {
             this._createImages('tweakers', images);
-          });
-
-        fetch('/images/gallery/tweakers-achmea.json')
-          .then(data => data.json())
-          .then(images => {
-            this._createImages('tweakers-achmea', images);
           });
 
         fetch('/images/gallery/tweakers-passen.json')
