@@ -101,6 +101,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <hr class="separator">
 
+      <h2>Ruhrgebied</h2>
+      <sl-gallery prefix="ruhrgebied"></sl-gallery>
+
+      <hr class="separator">
+
       <h2>Brand Guidelines KantoorProfi</h2>
       <sl-gallery prefix="brand-guidelines-kantoor_profi-2"></sl-gallery>
 
@@ -192,6 +197,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         window.addEventListener('resize', this._handleResize.bind(this));
         this._handleResize();
 
+        fetch('/images/gallery/sprookjesboek.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('sprookjesboek', images);
+          });
+
+        fetch('/images/gallery/ruhrgebied.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('ruhrgebied', images);
+          });
+
         fetch('/images/gallery/tweakers.json')
           .then(data => data.json())
           .then(images => {
@@ -226,12 +243,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           .then(data => data.json())
           .then(images => {
             this._createImages('a5-flyer-print', images);
-          });
-
-        fetch('/images/gallery/sprookjesboek.json')
-          .then(data => data.json())
-          .then(images => {
-            this._createImages('sprookjesboek', images);
           });
 
         fetch('/images/gallery/brand-guidelines-kantoor_profi-2.json')
