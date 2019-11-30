@@ -118,9 +118,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h2>Tweakers Flyer</h2>
       <sl-gallery prefix="tweakers-flyer"></sl-gallery>
 
-      <h2>Tweakers DS</h2>
-      <sl-gallery prefix="tweakers-ds"></sl-gallery>
-
       <h2>Tweakers Meet-up</h2>
       <sl-gallery prefix="tweakers-meet-up"></sl-gallery>
 
@@ -223,12 +220,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           .then(data => data.json())
           .then(images => {
             this._createImages('tweakers-flyer', images);
-          });
-
-        fetch('/images/gallery/tweakers-ds.json')
-          .then(data => data.json())
-          .then(images => {
-            this._createImages('tweakers-ds', images);
           });
 
         fetch('/images/gallery/tweakers-meet-up.json')
