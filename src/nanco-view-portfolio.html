@@ -129,9 +129,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <hr class="separator">
 
-      <h2>Lob</h2>
-      <sl-gallery prefix="lob"></sl-gallery>
-
       <h2>Magazine</h2>
       <sl-gallery prefix="magazine"></sl-gallery>
 
@@ -259,12 +256,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           .then(data => data.json())
           .then(images => {
             this._createImages('folder', images);
-          });
-
-        fetch('/images/gallery/lob.json')
-          .then(data => data.json())
-          .then(images => {
-            this._createImages('lob', images);
           });
 
         fetch('/images/gallery/magazine.json')
