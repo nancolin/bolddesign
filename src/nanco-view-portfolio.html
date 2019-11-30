@@ -96,8 +96,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <h2>Gallery</h2>
       </div>
 
-      <h2>Boek met sprookjes verhalen</h2>
-      <sl-gallery prefix="boek"></sl-gallery>
+      <h2>Sprookjesboek</h2>
+      <sl-gallery prefix="sprookjesboek"></sl-gallery>
 
       <hr class="separator">
 
@@ -231,10 +231,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             this._createImages('a5-flyer-print', images);
           });
 
-        fetch('/images/gallery/boek.json')
+        fetch('/images/gallery/sprookjesboek.json')
           .then(data => data.json())
           .then(images => {
-            this._createImages('boek', images);
+            this._createImages('sprookjesboek', images);
           });
 
         fetch('/images/gallery/brand-guidelines-kantoor_profi-2.json')
