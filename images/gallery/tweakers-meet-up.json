@@ -1,19 +1,19 @@
 [
- {
-  "src": "/images/gallery/tweakers-meet-up/landings_pagina.png",
-  "title": "Tweakers Meet-up",
-  "caption": "Landings pagina met ale infromatie over de meet-up."
- }, {
-  "src": "/images/gallery/tweakers-meet-up/logo.png",
-  "title": "Tweakers Meet-up",
-  "caption": "Verschilende logos voor de verschilende meet-ups van Tweakers 2018."
- }, {
-  "src": "/images/gallery/tweakers-meet-up/meetup2017.png",
-  "title": "Tweakers Meet-up",
-  "caption": "Infoformatie over de meet-up. Deze werden naar de knantie gestuurt."
- }, {
-  "src": "/images/gallery/tweakers-meet-up/photo.jpg",
-  "title": "Tweakers Meet-up",
-  "caption": "Foto van een meet-up."
- }
+  {
+    "src": "/images/gallery/tweakers-meet-up/logo.png",
+    "title": "Tweakers Meet-up",
+    "caption": "Verschilende logos voor de verschilende meet-ups van Tweakers 2018."
+  }, {
+    "src": "/images/gallery/tweakers-meet-up/landings_pagina.png",
+    "title": "Tweakers Meet-up",
+    "caption": "Landings pagina met ale infromatie over de meet-up."
+  }, {
+    "src": "/images/gallery/tweakers-meet-up/meetup2017.png",
+    "title": "Tweakers Meet-up",
+    "caption": "Infoformatie over de meet-up. Deze werden naar de knantie gestuurt."
+  }, {
+    "src": "/images/gallery/tweakers-meet-up/photo.jpg",
+    "title": "Tweakers Meet-up",
+    "caption": "Foto van een meet-up."
+  }
 ]

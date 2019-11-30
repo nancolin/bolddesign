@@ -126,11 +126,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h2>Tweakers Meet-up</h2>
       <sl-gallery prefix="tweakers-meet-up"></sl-gallery>
 
-      <h2>Blue Monday</h2>
-      <sl-gallery prefix="blue-monday"></sl-gallery>
+      <h2>Tweakers Blue Monday</h2>
+      <sl-gallery prefix="tweakers-blue-monday"></sl-gallery>
 
-      <h2>Mission 1337</h2>
-      <sl-gallery prefix="mission-1337"></sl-gallery>
+      <h2>Tweakers Mission 1337</h2>
+      <sl-gallery prefix="tweakers-mission-1337"></sl-gallery>
 
       <hr class="separator">
 
@@ -245,16 +245,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             this._createImages('tweakers-meet-up', images);
           });
 
-        fetch('/images/gallery/blue-monday.json')
+        fetch('/images/gallery/tweakers-blue-monday.json')
           .then(data => data.json())
           .then(images => {
-            this._createImages('blue-monday', images);
+            this._createImages('tweakers-blue-monday', images);
           });
 
-        fetch('/images/gallery/mission-1337.json')
+        fetch('/images/gallery/tweakers-mission-1337.json')
           .then(data => data.json())
           .then(images => {
-            this._createImages('mission-1337', images);
+            this._createImages('tweakers-mission-1337', images);
           });
 
         fetch('/images/gallery/mmka.json')
