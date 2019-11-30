@@ -106,14 +106,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <hr class="separator">
 
-      <h2>Brand Guidelines KantoorProfi</h2>
-      <sl-gallery prefix="brand-guidelines-kantoor_profi-2"></sl-gallery>
-
-      <h2>A5 Flyer</h2>
-      <sl-gallery prefix="a5-flyer-print"></sl-gallery>
+      <h2>KantoorProfi Brand Guidelines</h2>
+      <sl-gallery prefix="kantoorprofi-brand-guidelines"></sl-gallery>
 
       <h2>KantoorProfi Folder</h2>
       <sl-gallery prefix="kantoorprofi-folder"></sl-gallery>
+
+      <h2>KantoorProfi A5 Flyer</h2>
+      <sl-gallery prefix="kantoorprofi-a5-flyer-print"></sl-gallery>
 
       <hr class="separator">
 
@@ -209,6 +209,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             this._createImages('ruhrgebied', images);
           });
 
+        fetch('/images/gallery/kantoorprofi-brand-guidelines.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('kantoorprofi-brand-guidelines', images);
+          });
+
+        fetch('/images/gallery/kantoorprofi-folder.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('kantoorprofi-folder', images);
+          });
+
+        fetch('/images/gallery/kantoorprofi-a5-flyer-print.json')
+          .then(data => data.json())
+          .then(images => {
+            this._createImages('kantoorprofi-a5-flyer-print', images);
+          });
+
         fetch('/images/gallery/tweakers.json')
           .then(data => data.json())
           .then(images => {
@@ -237,24 +255,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           .then(data => data.json())
           .then(images => {
             this._createImages('mission-1337', images);
-          });
-
-        fetch('/images/gallery/a5-flyer-print.json')
-          .then(data => data.json())
-          .then(images => {
-            this._createImages('a5-flyer-print', images);
-          });
-
-        fetch('/images/gallery/brand-guidelines-kantoor_profi-2.json')
-          .then(data => data.json())
-          .then(images => {
-            this._createImages('brand-guidelines-kantoor_profi-2', images);
-          });
-
-        fetch('/images/gallery/kantoorprofi-folder.json')
-          .then(data => data.json())
-          .then(images => {
-            this._createImages('kantoorprofi-folder', images);
           });
 
         fetch('/images/gallery/mmka.json')
