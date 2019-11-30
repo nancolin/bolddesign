@@ -107,9 +107,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       <h2>A5 Flyer</h2>
       <sl-gallery prefix="a5-flyer-print"></sl-gallery>
 
-      <h2>Banners</h2>
-      <sl-gallery prefix="banners"></sl-gallery>
-
       <h2>Folder</h2>
       <sl-gallery prefix="folder"></sl-gallery>
 
@@ -274,12 +271,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           .then(data => data.json())
           .then(images => {
             this._createImages('a5-flyer-print', images);
-          });
-
-        fetch('/images/gallery/banners.json')
-          .then(data => data.json())
-          .then(images => {
-            this._createImages('banners', images);
           });
 
         fetch('/images/gallery/boek.json')
