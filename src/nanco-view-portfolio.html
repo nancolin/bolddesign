@@ -129,9 +129,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       <hr class="separator">
 
-      <h2>Briefpapier Lob</h2>
-      <sl-gallery prefix="briefpapier-lob"></sl-gallery>
-
       <h2>Lob</h2>
       <sl-gallery prefix="lob"></sl-gallery>
 
@@ -256,12 +253,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           .then(data => data.json())
           .then(images => {
             this._createImages('brand-guidelines-kantoor_profi-2', images);
-          });
-
-        fetch('/images/gallery/briefpapier-lob.json')
-          .then(data => data.json())
-          .then(images => {
-            this._createImages('briefpapier-lob', images);
           });
 
         fetch('/images/gallery/folder.json')
