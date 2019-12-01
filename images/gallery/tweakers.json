@@ -1,19 +1,23 @@
 [
- {
-  "src": "/images/gallery/tweakers/black_friday.png",
-  "title": "Tweakers",
-  "caption": "Happy black friday! (promotie kaart naar partners)"
- }, {
-  "src": "/images/gallery/tweakers/bureaugekkighaid.png",
-  "title": "Tweakers",
-  "caption": "Contact kaart."
- }, {
-  "src": "/images/gallery/tweakers/info_grafiek.png",
-  "title": "Tweakers",
-  "caption": "Infografiek over de bezoekers op tweakers.com."
- }, {
-  "src": "/images/gallery/tweakers/tweakers_express.png",
-  "title": "Tweakers",
-  "caption": "Informatie over de tweakers express."
- }
+  {
+    "src": "/images/gallery/tweakers/black_friday.png",
+    "small": "/images/gallery/tweakers/thumbs/black_friday.jpg",
+    "title": "Tweakers",
+    "caption": "Happy black friday! (promotie kaart naar partners)"
+  }, {
+    "src": "/images/gallery/tweakers/bureaugekkighaid.png",
+    "small": "/images/gallery/tweakers/thumbs/bureaugekkighaid.jpg",
+    "title": "Tweakers",
+    "caption": "Contact kaart."
+  }, {
+    "src": "/images/gallery/tweakers/info_grafiek.png",
+    "small": "/images/gallery/tweakers/thumbs/info_grafiek.jpg",
+    "title": "Tweakers",
+    "caption": "Infografiek over de bezoekers op tweakers.com."
+  }, {
+    "src": "/images/gallery/tweakers/tweakers_express.png",
+    "small": "/images/gallery/tweakers/thumbs/tweakers_express.jpg",
+    "title": "Tweakers",
+    "caption": "Informatie over de tweakers express."
+  }
 ]

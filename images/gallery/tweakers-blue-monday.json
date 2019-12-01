@@ -1,17 +1,21 @@
 [
   {
     "src": "/images/gallery/tweakers-blue-monday/wallpaper.png",
+    "small": "/images/gallery/tweakers-blue-monday/thumbs/wallpaper.jpg",
     "title": "Blue Monday",
     "caption": "Logo ontwerp."
   }, {
     "src": "/images/gallery/tweakers-blue-monday/banner.png",
+    "small": "/images/gallery/tweakers-blue-monday/thumbs/banner.jpg",
     "title": "Blue Monday",
     "caption": "Banner op de Home page van Tweakers."
   }, {
     "src": "/images/gallery/tweakers-blue-monday/banner2.png",
+    "small": "/images/gallery/tweakers-blue-monday/thumbs/banner2.jpg",
     "title": "Blue Monday"
   }, {
     "src": "/images/gallery/tweakers-blue-monday/landings_pagina_met_klanten.png",
+    "small": "/images/gallery/tweakers-blue-monday/thumbs/landings_pagina_met_klanten.jpg",
     "title": "Blue Monday",
     "caption": "Landingspagina."
   }

@@ -1,18 +1,22 @@
 [
   {
     "src": "/images/gallery/tweakers-meet-up/logo.png",
+    "small": "/images/gallery/tweakers-meet-up/thumbs/logo.jpg",
     "title": "Tweakers Meet-up",
     "caption": "Verschilende logos voor de verschilende meet-ups van Tweakers 2018."
   }, {
     "src": "/images/gallery/tweakers-meet-up/landings_pagina.png",
+    "small": "/images/gallery/tweakers-meet-up/thumbs/landings_pagina.jpg",
     "title": "Tweakers Meet-up",
     "caption": "Landings pagina met ale infromatie over de meet-up."
   }, {
     "src": "/images/gallery/tweakers-meet-up/meetup2017.png",
+    "small": "/images/gallery/tweakers-meet-up/thumbs/meetup2017.jpg",
     "title": "Tweakers Meet-up",
     "caption": "Infoformatie over de meet-up. Deze werden naar de knantie gestuurt."
   }, {
     "src": "/images/gallery/tweakers-meet-up/photo.jpg",
+    "small": "/images/gallery/tweakers-meet-up/thumbs/photo.jpg",
     "title": "Tweakers Meet-up",
     "caption": "Foto van een meet-up."
   }

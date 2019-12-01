@@ -1,17 +1,21 @@
 [
   {
     "src": "/images/gallery/tweakers-mission-1337/flyer.png",
+    "small": "/images/gallery/tweakers-mission-1337/thumbs/flyer.jpg",
     "title": "Mission 1337",
     "caption": "Flyer die ik gemaakt voor Mission 1337."
   }, {
     "src": "/images/gallery/tweakers-mission-1337/banners.png",
+    "small": "/images/gallery/tweakers-mission-1337/thumbs/banners.jpg",
     "title": "Mission 1337",
     "caption": "Banner op de home pagina."
   }, {
     "src": "/images/gallery/tweakers-mission-1337/landings_pagina.png",
+    "small": "/images/gallery/tweakers-mission-1337/thumbs/landings_pagina.jpg",
     "title": "Mission 1337"
   }, {
     "src": "/images/gallery/tweakers-mission-1337/photo.jpg",
+    "small": "/images/gallery/tweakers-mission-1337/thumbs/photo.jpg",
     "title": "Mission 1337",
     "caption": "Foto van de dat dat wij op de hoge school van enschede stonden."
   }
