@@ -1,0 +1,88 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="nanco-footer">
+  <template>
+    <style>
+      :host {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 24px 32px 24px 48px;
+        background-color: var(--app-accent-color);
+        color: var(--app-primary-color);
+        font-weight: 600;
+      }
+
+      :host > * {
+        margin: 8px 16px 8px 0;
+      }
+
+      a {
+        color: var(--app-primary-color);
+        text-decoration: none;
+      }
+
+      .title {
+        font-size: 36px;
+        line-height: 1;
+      }
+
+      .contact-info div {
+        font-size: 18px;
+        line-height: 1;
+      }
+
+      .contact-button {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .contact-button a {
+        padding: 8px;
+        border: 1px solid var(--app-primary-color);
+      }
+
+      @media (max-width: 840px) {
+        .title {
+          flex-basis: 100%;
+        }
+
+        .contact-info {
+          flex: 0 0 auto;
+        }
+
+        .contact-button {
+          flex: 1;
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 600px) {
+        :host {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+    <h2 class="title">Heb je nog vragen?</h2>
+
+    <div class="contact-info">
+      <div>Mobiel: <a href="tel:0634014318">06-34014318</a></div>
+      <div>Email: <a href="nancolin@hotmail.com">nancolin@hotmail.com</a></div>
+    </div>
+
+    <div class="contact-button">
+      <a href="[[rootPath]]contact">contact</a>
+    </div>
+  </template>
+
+  <script>
+    class NancoFooter extends Polymer.Element {
+      static get is() { return 'nanco-footer'; }
+    }
+
+    window.customElements.define(NancoFooter.is, NancoFooter);
+  </script>
+</dom-module>

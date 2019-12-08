@@ -1,0 +1,87 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pridi:600&display=swap">
+
+<dom-module id="nanco-intro-block">
+  <template>
+    <style>
+      :host {
+        display: block;
+        background-size: cover;
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-image: url("/images/keyboard-bg.jpg");
+        font-family: 'Pridi', sans-serif;
+        font-weight: 600;
+      }
+
+      .container {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        padding: 72px;
+      }
+
+      .main-text {
+        flex: 1 0 auto;
+        margin-right: 16px;
+      }
+
+      .main-text .title {
+        font-size: 72px;
+        margin-bottom: 24px;
+      }
+
+      .main-text .intro {
+        font-size: 36px;
+        line-height: 1;
+      }
+
+      .link-text {
+        margin-top: 24px;
+      }
+
+      .link-text a {
+        display: inline-block;
+        color: var(--secondary-color);
+        text-decoration: none;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+        font-size: 18px;
+        line-height: 0.85;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 48px;
+        }
+
+        .main-text {
+          margin-right: 0;
+        }
+      }
+    </style>
+    <div class="container">
+      <div class="main-text">
+        <div class="title">Hallo,</div>
+        <div class="intro">
+          Ik ben Nanco Lin<br>
+          & ik ben een<br>
+          creatieve duizendpoot!
+        </div>
+      </div>
+      <div class="link-text">
+        <a href="[[rootPath]]overmij">Klik hier voor mijn CV</a>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    class NancoIntroBlock extends Polymer.Element {
+      static get is() { return 'nanco-intro-block'; }
+    }
+
+    window.customElements.define(NancoIntroBlock.is, NancoIntroBlock);
+  </script>
+</dom-module>

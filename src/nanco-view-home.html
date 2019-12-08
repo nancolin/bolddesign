@@ -9,9 +9,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
-<link rel="import" href="modules/nanco-info-card.html">
-<link rel="import" href="modules/nanco-resume-content.html">
-<link rel="import" href="modules/nanco-resume-sidebar.html">
+<link rel="import" href="modules/nanco-intro-block.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="nanco-view-home">
@@ -19,48 +17,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
-        padding-bottom: 2px;
-      }
-
-      .content {
-        display: flex;
-        margin: 32px 0;
-      }
-
-      .main-content {
-        flex: 1;
-      }
-
-      .side-content {
-        flex: 0 0 180px;
-        margin-left: 36px;
-      }
-
-      @media (max-width: 720px) {
-        .content {
-          flex-direction: column;
-        }
-
-        .side-content {
-          flex: 1;
-          margin-left: 0;
-        }
       }
     </style>
-
     <img class="banner" src="images/banner.png" alt="">
 
-    <div class="container">
-      <nanco-info-card image="images/nanco.jpg"></nanco-info-card>
-      <div class="content">
-        <div class="main-content">
-          <nanco-resume-content></nanco-resume-content>
-        </div>
-        <div class="side-content">
-          <nanco-resume-sidebar></nanco-resume-sidebar>
-        </div>
-      </div>
-    </div>
+    <!-- <div class="container"></div> -->
+
+    <nanco-intro-block></nanco-intro-block>
   </template>
 
   <script>

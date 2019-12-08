@@ -21,10 +21,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="modules/nanco-header.html">
+<link rel="import" href="modules/nanco-footer.html">
 <link rel="import" href="nanco-icons.html">
 
 <link rel="lazy-import" href="nanco-view-home.html">
 <link rel="lazy-import" href="nanco-view-portfolio.html">
+<link rel="lazy-import" href="nanco-view-overmij.html">
 <link rel="lazy-import" href="nanco-view-contact.html">
 <link rel="lazy-import" href="nanco-view-error404.html">
 
@@ -37,11 +39,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --app-accent-color: #2f3334;
         --app-link-color: #4d5657;
 
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         margin: 0 auto;
         min-height: 100vh;
         max-width: 1024px;
         background-color: var(--app-primary-color);
+      }
+
+      app-location, app-route {
+        display: none;
       }
     </style>
 
@@ -57,8 +65,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         tail="{{subroute}}">
     </app-route>
 
-    <div class="container">
-
+    <div class="content-wrapper">
       <nanco-header></nanco-header>
 
       <iron-pages
@@ -68,11 +75,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           role="main">
         <nanco-view-home name="home"></nanco-view-home>
         <nanco-view-portfolio name="portfolio"></nanco-view-portfolio>
+        <nanco-view-overmij name="overmij"></nanco-view-overmij>
         <nanco-view-contact name="contact"></nanco-view-contact>
         <nanco-view-error404 name="error404"></nanco-view-error404>
       </iron-pages>
-
     </div>
+
+    <nanco-footer></nanco-footer>
   </template>
 
   <script>
