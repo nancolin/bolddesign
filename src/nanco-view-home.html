@@ -18,10 +18,93 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       :host {
         display: block;
       }
+
+      h2 {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 600;
+        margin: 16px 0;
+      }
+
+      .portfolio {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+
+      .portfolio .item {
+        flex: 1 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 250px;
+        padding: 16px;
+        margin: 16px;
+        text-decoration: none;
+        color: var(--app-secondary-color);
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      }
+
+      .portfolio .item:hover,
+      .portfolio .item:focus {
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 8px 0 rgba(0, 0, 0, 0.12),
+                    0 3px 3px -2px rgba(0, 0, 0, 0.4);
+      }
+
+      .portfolio .item img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .portfolio .item span {
+        display: block;
+        margin: 16px 0 0;
+        font-weight: 600;
+      }
+
+      @media (max-width: 720px) {
+        .portfolio {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 32px 24px;
+        }
+      }
     </style>
     <img class="banner" src="images/banner.png" alt="">
 
-    <!-- <div class="container"></div> -->
+    <div class="container">
+      <h2>Portfolio</h2>
+      <div class="portfolio">
+        <a class="item" href="[[rootPath]]portfolio#/tweakers-flyer/1">
+          <div class="image">
+            <img src="images/portfolio/tweakers.jpg" alt="tweakers flyer">
+          </div>
+          <span>Flyer Voor Tweakers</span>
+        </a>
+        <a class="item" href="[[rootPath]]portfolio#/ruhrgebied/0">
+          <div class="image">
+            <img src="images/portfolio/ruhrgebied.jpg" alt="ruhrgebied flyer">
+          </div>
+          <span>Folder Voor Ruhrgebeid</span>
+        </a>
+        <a class="item" href="[[rootPath]]portfolio#/sprookjesboek/0">
+          <div class="image">
+            <img src="images/portfolio/sprookjesboek.jpg" alt="sprookjesboek">
+          </div>
+          <span>Sprookjesboek:<br>Three Little Pigs</span>
+        </a>
+      </div>
+    </div>
 
     <nanco-intro-block></nanco-intro-block>
   </template>
